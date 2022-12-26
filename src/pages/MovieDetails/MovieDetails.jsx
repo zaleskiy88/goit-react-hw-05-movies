@@ -25,7 +25,7 @@ const MovieDetails = () => {
     }
     return data.genres.map(genre => genre.name).join(', ');
   };
-  console.log(location.state.from);
+
   return (
     <>
       {movieData.poster_path !== undefined && (
