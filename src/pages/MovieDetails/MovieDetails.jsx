@@ -33,7 +33,9 @@ const MovieDetails = () => {
           <Container>
             <ButtonLink
               to={
-                location.state.from ? location.state.from : `/movies/${movieId}`
+                location.state.from !== null
+                  ? location.state.from
+                  : `/movies/${movieId}`
               }
             >
               <Button>
