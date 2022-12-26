@@ -31,13 +31,7 @@ const MovieDetails = () => {
       {movieData.poster_path !== undefined && (
         <>
           <Container>
-            <ButtonLink
-              to={
-                location.state?.from !== null
-                  ? location.state.from
-                  : `/movies/${movieId}`
-              }
-            >
+            <ButtonLink to={location.state?.from ?? '/'}>
               <Button>
                 <FiArrowLeft />
                 Go back
@@ -60,10 +54,16 @@ const MovieDetails = () => {
 
           <AddInfoWrapper>
             <p>Additional information</p>
-            <Link to="cast" state={{ from: location.state.from }}>
+            <Link
+              to="cast"
+              state={{ from: location.state?.from ?? `/movies/${movieId}` }}
+            >
               Cast
             </Link>
-            <Link to="reviews" state={{ from: location.state.from }}>
+            <Link
+              to="reviews"
+              state={{ from: location.state?.from ?? `/movies/${movieId}` }}
+            >
               Reviews
             </Link>
           </AddInfoWrapper>

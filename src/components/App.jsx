@@ -8,7 +8,7 @@ const Movies = lazy(() => import('../pages/Movies/Movies'));
 const Cast = lazy(() => import('../components/Cast/Cast'));
 const Reviews = lazy(() => import('../components/Reviews/Reviews'));
 
-export const App = () => {
+const App = () => {
   return (
     <div
       style={{
