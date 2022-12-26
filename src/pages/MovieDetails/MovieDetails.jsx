@@ -31,7 +31,11 @@ const MovieDetails = () => {
       {movieData.poster_path !== undefined && (
         <>
           <Container>
-            <ButtonLink to={location.state.from}>
+            <ButtonLink
+              to={
+                location.state.from ? location.state.from : `/movies/${movieId}`
+              }
+            >
               <Button>
                 <FiArrowLeft />
                 Go back
